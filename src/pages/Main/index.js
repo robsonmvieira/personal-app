@@ -1,12 +1,17 @@
 import React from 'react'
-import {View, Text} from 'react-native'
+import {Text, Button} from 'react-native'
 
-// import { Container } from './styles';
+import {Container} from './styles'
 
-export default function Main() {
+export default function Main(props) {
+  const {navigate} = props.navigation
   return (
-    <View>
-      <Text>Main Screen!!!</Text>
-    </View>
+    <Container>
+      <Text>Main Screen!</Text>
+      <Button
+        title="Go to Contact screen"
+        onPress={() => navigate('Contact')}
+      />
+    </Container>
   )
 }
