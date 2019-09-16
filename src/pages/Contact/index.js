@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Text, TextInput, Button} from 'react-native'
 
 import {Container} from './styles'
 
 export default function Contact(props) {
+  const [name, setName] = useState()
   const {navigate} = props.navigation
   return (
     <Container>
@@ -17,7 +18,9 @@ export default function Contact(props) {
           backgroundColor: '#fff',
         }}
         placeholder="tip your email"
+        onChangeText={text => setName(text)}
       />
+      <Text>{name}</Text>
     </Container>
   )
 }
