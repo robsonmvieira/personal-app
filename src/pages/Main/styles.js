@@ -1,4 +1,5 @@
 import styled from 'styled-components/native'
+import {RectButton} from 'react-native-gesture-handler'
 export const Container = styled.View`
   flex-grow: 1;
 `
@@ -49,7 +50,7 @@ export const BoxIconContainer = styled.View`
   margin-bottom: 25px;
   background-color #ccc;
 `
-export const BoxIcon = styled.View`
+export const BoxIcon = styled(RectButton)`
   margin-top: 15px;
   margin-right: 20px;
   width: 80px;

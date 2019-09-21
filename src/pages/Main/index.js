@@ -1,7 +1,8 @@
 import React from 'react'
 import BGImage from '../../assets/images/mainBG.jpg'
-import {StatusBar} from 'react-native'
+import {StatusBar, Text} from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
+
 import {
   Container,
   BgContainer,
@@ -14,8 +15,11 @@ import {
   BoxIcon,
 } from './styles'
 
-export default function Main(props) {
-  const {navigate} = props.navigation
+export default function Main({navigation}) {
+  function toContact() {
+    return navigate('Contact')
+  }
+  // const {navigate} = props.navigation
   const date = new Date()
   const monthNames = [
     'January',
@@ -63,8 +67,8 @@ export default function Main(props) {
           </DateInformation>
           <LineStyle />
           <BoxIconContainer>
-            <BoxIcon>
-              <Icon size={40} name="contacts"></Icon>
+            <BoxIcon onPress={() => navigation.navigate('Contact')}>
+              <Icon size={40} name="contacts" />
             </BoxIcon>
             <BoxIcon>
               <Icon size={40} name="dashboard"></Icon>
