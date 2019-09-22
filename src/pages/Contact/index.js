@@ -1,26 +1,46 @@
 import React, {useState} from 'react'
-import {Text, TextInput, Button} from 'react-native'
+import {
+  Container,
+  BlurContant,
+  Form,
+  InputInformatation,
+  TextArea,
+  SubmitButton,
+  SubmitTextButton,
+} from './styles'
+import ContactBG from '../../assets/images/contactBG.jpg'
 
-import {Container} from './styles'
-
-export default function Contact(props) {
+function Contact(props) {
   const [name, setName] = useState()
-  const {navigate} = props.navigation
+  const [email, setEmail] = useState()
+  const [message, setMessage] = useState()
+  const contact = {name, email, message}
+
+  const handleForm = function() {
+    return contact
+  }
   return (
-    <Container>
-      <Text>Contact Screen</Text>
-      <Button title="go back to Main Screen" onPress={() => navigate('Main')} />
-      <TextInput
-        style={{
-          height: 40,
-          marginTop: 40,
-          paddingLeft: 20,
-          backgroundColor: '#fff',
-        }}
-        placeholder="tip your email"
-        onChangeText={text => setName(text)}
-      />
-      <Text>{name}</Text>
+    <Container source={ContactBG}>
+      <BlurContant>
+        <Form>
+          <InputInformatation
+            placeholder="tip your name"
+            onChangeText={text => setName(text)}
+          />
+          <InputInformatation
+            placeholder="tip your email"
+            onChangeText={text => setEmail(text)}
+          />
+          <TextArea
+            placeholder="tip your message"
+            onChangeText={text => setMessage(text)}
+          />
+          <SubmitButton onPress={handleForm}>
+            <SubmitTextButton>send</SubmitTextButton>
+          </SubmitButton>
+        </Form>
+      </BlurContant>
     </Container>
   )
 }
+export default Contact

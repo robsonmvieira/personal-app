@@ -15,11 +15,8 @@ import {
   BoxIcon,
 } from './styles'
 
-export default function Main({navigation}) {
-  function toContact() {
-    return navigate('Contact')
-  }
-  // const {navigate} = props.navigation
+export default function Main(props) {
+  const {navigate} = props.navigation
   const date = new Date()
   const monthNames = [
     'January',
@@ -67,15 +64,15 @@ export default function Main({navigation}) {
           </DateInformation>
           <LineStyle />
           <BoxIconContainer>
-            <BoxIcon onPress={() => navigation.navigate('Contact')}>
+            <BoxIcon onPress={() => navigate('Contact')}>
               <Icon size={40} name="contacts" />
             </BoxIcon>
-            <BoxIcon>
+            <BoxIcon onPress={() => navigate('About')}>
               <Icon size={40} name="dashboard"></Icon>
             </BoxIcon>
           </BoxIconContainer>
           <BoxIconContainer>
-            <BoxIcon>
+            <BoxIcon onPress={() => navigate('Portfolio')}>
               <Icon size={40} name="fingerprint" />
             </BoxIcon>
           </BoxIconContainer>

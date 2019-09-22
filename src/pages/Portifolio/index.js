@@ -1,8 +1,12 @@
 import React from 'react'
-import {View} from 'react-native'
+import {View, Text} from 'react-native'
 
 import {Container} from './styles'
 
 export default function Portifolio() {
-  return <View />
+  return (
+    <View>
+      <Text>Portifolio Screen</Text>
+    </View>
+  )
 }
