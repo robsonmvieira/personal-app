@@ -8,6 +8,7 @@ import {
   SubmitButton,
   SubmitTextButton,
 } from './styles'
+import {StatusBar} from 'react-native'
 import ContactBG from '../../assets/images/contactBG.jpg'
 
 function Contact(props) {
@@ -21,6 +22,11 @@ function Contact(props) {
   }
   return (
     <Container source={ContactBG}>
+      <StatusBar
+        translucent
+        backgroundColor="transparent"
+        barStyle="light-content"
+      />
       <BlurContant>
         <Form>
           <InputInformatation
